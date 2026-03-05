@@ -1,0 +1,31 @@
+{
+  "data_source": "huggingface",
+  "dataset_name": "synthetic",
+  "target_column": "y",
+  "feature_columns": ["x"],
+  "hidden_sizes": [16, 8],
+  "epochs": 8000,
+  "learning_rate": 0.03,
+  "batch_size": 32,
+  "random_seed": 42,
+  "test_size": 0.2,
+  "model_save_path": "./Model",
+  "data_save_path": "./sample_data",
+  "regression_task": true,
+  "output_activation": "linear",
+  "hidden_activation": "tanh",
+  "loss_function": "mse",
+  "noise_std": 0.05,
+  "x_range": [-6.283185307179586, 6.283185307179586],
+  "n_samples": 1000,
+  "use_peft": true,
+  "save_format": "peft",
+  "peft_config": {
+    "r": 16,
+    "lora_alpha": 32,
+    "target_modules": ["0", "2", "4"],
+    "lora_dropout": 0.1,
+    "bias": "none",
+    "task_type": "FEATURE_EXTRACTION"
+  }
+}
